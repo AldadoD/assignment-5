@@ -32,7 +32,7 @@ public class Busdriver {
 
         private String driverId, driverFirstName, driverLastName;
 
-        private Set<Routes> route;
+//        private Set<Routes> route;
 
         public Builder driverId( String driverId) {
             this.driverId = driverId;
@@ -56,10 +56,6 @@ public class Busdriver {
         }
     @Override
     public String toString() {
-        return "Driver{" +
-                "driverId='" + driverId + '\'' +
-                ", driverFirstName='" + driverFirstName + '\'' +
-                ", driverLastName='" + driverLastName +
-                '}';
+        return "Driver{" + "Driver's Id = '" + driverId + '\'' + ", Driver's First Name = '" + driverFirstName + '\'' + ", Driver's Last Name = '" + driverLastName + '}';
     }
 }

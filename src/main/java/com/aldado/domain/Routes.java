@@ -41,9 +41,6 @@ public class Routes {
 
     @Override
     public String toString() {
-        return "Route{" +
-                "routeId='" + routeId + '\'' +
-                ", routeName='" + routeName + '\'' +
-                '}';
+        return "Route{" + "Route Id = '" + routeId + '\'' + ", Route Name = '" + routeName + '\'' + '}';
     }
 }
