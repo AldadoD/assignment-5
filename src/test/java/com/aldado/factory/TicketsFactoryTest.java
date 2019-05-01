@@ -12,9 +12,9 @@ public class TicketsFactoryTest {
     public void getTickets() {
 
         String tickets = "";
-        Tickets t = TicketsFactory.getTickets(tickets);
+        Tickets t = TicketsFactory.getTicket(tickets);
         System.out.println(t);
-        Assert.assertNotNull(t.getTicket());
+        Assert.assertNull(t.getTicket());
 
     }
 }

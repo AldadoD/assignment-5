@@ -1,5 +1,7 @@
 package com.aldado.domain;
 
+import java.util.Objects;
+
 public class Commuter {
 
     private boolean hasTicket;
@@ -11,12 +13,13 @@ public class Commuter {
         this.hasTicket = builder.hasTicket;
     }
 
-    private boolean gethasTicket(){
+    private boolean getHasTicket(){
         return hasTicket;
     }
+
     public static class Builder{
 
-        private boolean hasTicket;
+        public boolean hasTicket;
 
         public Commuter.Builder hasTicket(boolean hasTicket) {
             this.hasTicket = hasTicket;
@@ -30,6 +33,6 @@ public class Commuter {
 
     @Override
     public String toString() {
-        return "Commuter{" + "hasTicket=" + hasTicket + '}';
+        return "Commuter{" + "has a valid ticket = " + hasTicket + '}';
     }
 }

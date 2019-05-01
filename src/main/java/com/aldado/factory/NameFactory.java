@@ -1,6 +1,5 @@
 package com.aldado.factory;
 
-import com.aldado.domain.Inspector;
 import com.aldado.domain.Name;
 
 public class NameFactory {

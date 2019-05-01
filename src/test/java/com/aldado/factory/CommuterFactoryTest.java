@@ -2,6 +2,7 @@ package com.aldado.factory;
 
 import com.aldado.domain.Commuter;
 
+import com.aldado.util.Misc;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,8 +13,7 @@ public class CommuterFactoryTest {
     @Test
         public void getCommuter() {
 
-            boolean hasTicket = equals(false);
-            Commuter c = CommuterFactory.getCommuter(hasTicket);
+            Commuter c = CommuterFactory.getCommuter(Misc.checkValidTicket());
             System.out.println(c);
             Assert.assertTrue(true);
 
