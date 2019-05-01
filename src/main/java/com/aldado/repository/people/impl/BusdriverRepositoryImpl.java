@@ -1,6 +1,6 @@
 package com.aldado.repository.people.impl;
 
-import com.aldado.domain.Busdriver;
+import com.aldado.domain.people.Busdriver;
 import com.aldado.repository.people.BusdriverRepository;
 
 import java.util.HashSet;

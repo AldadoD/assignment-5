@@ -1,7 +1,7 @@
 package com.aldado.repository.people.impl;
 
-import com.aldado.domain.Busdriver;
-import com.aldado.factory.BusdriverFactory;
+import com.aldado.domain.people.Busdriver;
+import com.aldado.factory.people.BusdriverFactory;
 import com.aldado.repository.people.BusdriverRepository;
 import org.junit.Assert;
 import org.junit.Before;
@@ -10,8 +10,6 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import java.util.Set;
-
-import static org.junit.Assert.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BusdriverRepositoryImplTest {

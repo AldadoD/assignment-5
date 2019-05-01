@@ -1,6 +1,6 @@
 package com.aldado.repository.admin.impl;
 
-import com.aldado.domain.Bus;
+import com.aldado.domain.admin.Bus;
 import com.aldado.repository.admin.BusRepository;
 
 import java.util.HashSet;

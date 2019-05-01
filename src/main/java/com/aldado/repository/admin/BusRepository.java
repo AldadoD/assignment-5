@@ -1,6 +1,6 @@
 package com.aldado.repository.admin;
 
-import com.aldado.domain.Bus;
+import com.aldado.domain.admin.Bus;
 import com.aldado.repository.ARepository;
 
 import java.util.Set;

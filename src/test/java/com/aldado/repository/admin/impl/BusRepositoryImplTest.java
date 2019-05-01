@@ -1,6 +1,6 @@
 package com.aldado.repository.admin.impl;
 
-import com.aldado.domain.Bus;
+import com.aldado.domain.admin.Bus;
 import com.aldado.repository.admin.BusRepository;
 import org.junit.Assert;
 import org.junit.Before;
@@ -12,7 +12,7 @@ public class BusRepositoryImplTest {
     private BusRepository repository;
     private Bus bus;
 
-    private Bus getBus() {
+    private Bus getBus(String s, String aTrue, String aFalse) {
         Set<Bus> bus = this.repository.getAll();
         return bus.iterator().next();
     }
@@ -39,7 +39,7 @@ public class BusRepositoryImplTest {
 
     @Test
     public void delete() {
-        Bus bus = getBus();
+        Bus bus = getBus("", "True", "False");
         this.repository.delete(bus.getId());
         d_getAll();
     }
@@ -48,7 +48,7 @@ public class BusRepositoryImplTest {
 
     @Test
     public void read() {
-        Bus bus = getBus();
+        Bus bus = getBus("", "True", "False");
         System.out.println("In read, driverId = "+ bus.getId());
         Bus read = this.repository.read(bus.getId());
         System.out.println("In read, read = " + read);
@@ -59,7 +59,7 @@ public class BusRepositoryImplTest {
     @Test
     public void update() {
         String newId = "New Bus Id";
-        Bus bus = new Bus.Builder().copy(getBus()).id(newId).build();
+        Bus bus = new Bus.Builder().copy(getBus("", "True", "False")).id(newId).build();
 //        Bus bus = new Bus.Builder().copy(getBus()).Id(newId).build();
         System.out.println("In update, about_to_updated = " + bus);
         Bus updated = this.repository.update(bus);
