@@ -32,7 +32,13 @@ public class Routes {
             this.routeName = routeName;
             return this;
         }
+        public Builder copy(Routes routes) {
+            this.routeId = routes.routeId;
+            this.routeName = routes.routeName;
 
+
+            return this;
+        }
         public Routes build() {
             return new Routes(this);
         }

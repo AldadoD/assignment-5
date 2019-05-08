@@ -9,7 +9,7 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-import java.util.Set;
+import java.util.Collection;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BusdriverRepositoryImplTest {
@@ -18,7 +18,7 @@ public class BusdriverRepositoryImplTest {
     private Busdriver busdriver;
 
     private Busdriver getBusdriver() {
-        Set<Busdriver> busdriver = this.repository.getAll();
+        Collection<Busdriver> busdriver = this.repository.getAll();
         return busdriver.iterator().next();
     }
 
@@ -26,41 +26,50 @@ public class BusdriverRepositoryImplTest {
     public void setUp() throws Exception {
         this.repository = BusdriverRepositoryImpl.getRepository();
         this.busdriver = BusdriverFactory.buildDriver("John", "Jacobs", "");
+
+        repository.create(this.busdriver.getDriverId(), this.busdriver);
     }
 
     @Test
     public void create() {
-        Busdriver created = this.repository.create(this.busdriver);
-        System.out.println("In create, created = " + created);
+        Busdriver busdriver = new Busdriver.Builder()
+                .driverId("")
+                .driverFirstName("")
+                .driverLastName("")
+                .build();
+
+        Busdriver created = this.repository.create(busdriver.getDriverId(), busdriver);
+        System.out.println("\n" + "In create, created = " + created);
         d_getAll();
-        Assert.assertSame(created, this.busdriver);
+        Assert.assertSame(created, busdriver);
 
     }
 
-
     @Test
     public void delete() {
-        Busdriver savedCourse = getBusdriver();
-        this.repository.delete(savedCourse.getDriverId());
+        Busdriver busdriver = getBusdriver();
+        System.out.println("\n" + "In Delete, delete = " + busdriver);
+        this.repository.delete(busdriver.getDriverId());
         d_getAll();
+        Assert.assertNotNull(busdriver);
     }
 
     @Test
     public void read() {
         Busdriver busdriver = getBusdriver();
-        System.out.println("In read, driverId = "+ busdriver.getDriverId());
+        System.out.println("\n" + "In read, read = "+ busdriver.getDriverId());
         Busdriver read = this.repository.read(busdriver.getDriverId());
-        System.out.println("In read, read = " + read);
+//        System.out.println("In read, read = " + read);
         d_getAll();
-        Assert.assertNotSame(busdriver, read);
+        Assert.assertSame(busdriver, read);
     }
 
     @Test
     public void update() {
-        String newname = "New Driver Name";
+        String newname = "Allan";
         Busdriver busdriver = new Busdriver.Builder().copy(getBusdriver()).driverFirstName(newname).build();
-        System.out.println("In update, about_to_updated = " + busdriver);
-        Busdriver updated = this.repository.update(busdriver);
+        System.out.println("\n" + "In update, about_to_updated = " + busdriver);
+        Busdriver updated = this.repository.update(busdriver.getDriverId(), busdriver);
         System.out.println("In update, updated = " + updated);
         Assert.assertSame(newname, updated.getDriverFirstName());
         d_getAll();
@@ -68,7 +77,7 @@ public class BusdriverRepositoryImplTest {
 
     @Test
     public void d_getAll() {
-        Set<Busdriver> all = this.repository.getAll();
+        Collection<Busdriver> all = this.repository.getAll();
         System.out.println("In getAll, all = " + all);
     }
 }

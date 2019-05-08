@@ -2,7 +2,7 @@ package com.aldado.domain.admin;
 
 public class TicketSales {
 
-    private int ticketPrice;
+    private String ticketPrice;
     private String destination;
 
     private TicketSales(){
@@ -13,19 +13,26 @@ public class TicketSales {
         this.destination = builder.destination;
     }
 
-    public int getTicketPrice(){
+    public String getTicketPrice(){
         return ticketPrice;
     }
     public static class Builder{
         public String destination;
-        private int ticketPrice;
+        private String ticketPrice;
 
-        public Builder tickePrice(int ticketPrice) {
+        public Builder ticketPrice(String ticketPrice) {
             this.ticketPrice = ticketPrice;
             return this;
         }
         public Builder destination(String destination){
             this.destination = destination;
+            return this;
+        }
+        public Builder copy(TicketSales ticketSales) {
+            this.ticketPrice = ticketSales.ticketPrice;
+            this.destination = ticketSales.destination;
+
+
             return this;
         }
         public TicketSales build(){

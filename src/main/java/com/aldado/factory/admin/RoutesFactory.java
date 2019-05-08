@@ -5,7 +5,7 @@ import com.aldado.util.Misc;
 
 public class RoutesFactory {
 
-    public static Routes getRoutes(String routeName) {
+    public static Routes getRoutes(String routeName, String routeId) {
         return new Routes.Builder().routeId(Misc.generateId()).routeName(routeName).build();
     }
 }

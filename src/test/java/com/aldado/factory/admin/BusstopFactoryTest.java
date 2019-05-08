@@ -1,7 +1,6 @@
 package com.aldado.factory.admin;
 
 import com.aldado.domain.admin.Busstop;
-import com.aldado.factory.admin.BusstopFactory;
 import org.junit.Assert;
 import org.junit.Test;
 

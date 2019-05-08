@@ -58,6 +58,15 @@ public class Inspector {
             this.validTicket = validTicket;
             return this;
         }
+        public Builder copy(Inspector inspector) {
+            this.id = inspector.id;
+            this.inspectorFirstName = inspector.inspectorFirstName;
+            this.inspectorLastName = inspector.inspectorLastName;
+            this.validTicket = inspector.validTicket;
+
+
+            return this;
+        }
 
         public Inspector build(){
             return new Inspector(this);

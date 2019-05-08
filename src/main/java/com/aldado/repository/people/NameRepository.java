@@ -1,4 +1,11 @@
 package com.aldado.repository.people;
 
-public class NameRepository {
+import com.aldado.domain.people.Name;
+import com.aldado.repository.ARepository;
+
+import java.util.Collection;
+
+public interface NameRepository extends ARepository<String, Name> {
+
+    Collection<Name> getAll();
 }

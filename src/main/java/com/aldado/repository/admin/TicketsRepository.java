@@ -1,4 +1,11 @@
 package com.aldado.repository.admin;
 
-public class TicketsRepository {
+import com.aldado.domain.admin.Tickets;
+import com.aldado.repository.ARepository;
+
+import java.util.Collection;
+
+public interface TicketsRepository extends ARepository<String, Tickets> {
+
+    Collection<Tickets> getAll();
 }

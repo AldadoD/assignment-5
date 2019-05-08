@@ -3,17 +3,12 @@ package com.aldado.repository.admin.impl;
 import com.aldado.domain.admin.Bus;
 import com.aldado.repository.admin.BusRepository;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class BusRepositoryImpl implements BusRepository {
 
     private static BusRepository repository = null;
-    private Set<Bus> bus;
-
-    private BusRepositoryImpl() {
-        this.bus = new HashSet<>();
-    }
+    private Map<String, Bus> map = new HashMap();
 
     public static BusRepository getRepository(){
         if (repository == null) repository = new BusRepositoryImpl();
@@ -21,30 +16,35 @@ public class BusRepositoryImpl implements BusRepository {
     }
 
 
+    @Override
+    public Collection<Bus> getAll() {
+        return map.values();
+    }
 
     @Override
-    public Bus create(Bus bus) {
-        this.bus.add(bus);
+    public Bus create(String s, Bus bus) {
+        map.put(s, bus);
         return bus;
     }
 
     @Override
-    public Bus update(Bus bus) {
-        return null;
+    public Bus update(String s, Bus bus) {
+        if (map.containsKey(s)) {
+            map.remove(s);
+        }
+
+        map.put(s, bus);
+
+        return bus;
     }
 
     @Override
-    public void delete(String s) {
-        this.bus.remove(bus);
+    public Bus delete(String s) {
+        return  map.remove(s);
     }
 
     @Override
-    public Bus read(String s) {
-        return null;
+    public Bus read(String id) {
+        return map.get(id);
     }
-    @Override
-    public Set<Bus> getAll() {
-        return this.bus;
-    }
-
 }

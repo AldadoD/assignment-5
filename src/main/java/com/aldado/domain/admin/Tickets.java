@@ -4,6 +4,7 @@ public class Tickets {
 
     private String ticket;
 
+
     private Tickets(){
 
     }
@@ -11,17 +12,26 @@ public class Tickets {
         this.ticket = builder.ticket;
 
     }
+
     public String getTicket(){
         return ticket;
     }
+
     public static class Builder{
+
         private String ticket;
 
-        public Tickets.Builder ticket(String id){
+        public Tickets.Builder ticket(String ticket){
             this.ticket = ticket;
             return this;
 
         }
+
+        public Builder copy(Tickets tickets) {
+            this.ticket = tickets.ticket;
+            return this;
+        }
+
         public Tickets build(){
             return new Tickets(this);
         }
@@ -29,6 +39,6 @@ public class Tickets {
 
     @Override
     public String toString() {
-        return "Tickets{" + "ticket='" + ticket + '\'' + '}';
+        return "Tickets{" + "ticket = " + ticket + '}';
     }
 }

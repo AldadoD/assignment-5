@@ -17,14 +17,18 @@ public class Busstop {
         return code;
     }
 
-
     public static class Builder {
 
         private String code;
 
-
         public Busstop.Builder code(String code) {
             this.code = code;
+            return this;
+
+        }
+
+        public Builder copy(Busstop busstop) {
+            this.code = busstop.code;
             return this;
         }
 

@@ -1,7 +1,6 @@
 package com.aldado.factory.people;
 
 import com.aldado.domain.people.Inspector;
-import com.aldado.factory.admin.InspectorFactory;
 import org.junit.Assert;
 import org.junit.Test;
 

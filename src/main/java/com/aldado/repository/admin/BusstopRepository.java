@@ -1,4 +1,11 @@
 package com.aldado.repository.admin;
 
-public class BusstopRepository {
+import com.aldado.domain.admin.Busstop;
+import com.aldado.repository.ARepository;
+
+import java.util.Collection;
+
+public interface BusstopRepository extends ARepository<String, Busstop> {
+
+    Collection<Busstop> getAll();
 }

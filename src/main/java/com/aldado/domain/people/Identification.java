@@ -22,6 +22,12 @@ public class Identification {
             return this;
 
         }
+
+        public Builder copy(Identification identification) {
+            this.id = identification.id;
+
+            return this;
+        }
         public Identification build(){
             return new Identification(this);
         }

@@ -1,16 +1,13 @@
 package com.aldado.domain.people;
 
-import com.aldado.domain.admin.Routes;
-
 import java.util.Objects;
-import java.util.Set;
 
 public class Busdriver {
 
     private  String driverId, driverFirstName, driverLastName;
-    private Set<Routes> route;
 
-    private Busdriver(){//this is the line i should check
+
+    private Busdriver(){
 
     }
     private Busdriver(Builder builder){
@@ -41,9 +38,7 @@ public class Busdriver {
 
         private String driverId, driverFirstName, driverLastName;
 
-        private Set<Routes> route;
-
-        public Builder driverId( String driverId) {
+         public Busdriver.Builder driverId( String driverId) {
             this.driverId = driverId;
             return this;
         }

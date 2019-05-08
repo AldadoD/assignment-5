@@ -1,7 +1,6 @@
 package com.aldado.factory.admin;
 
 import com.aldado.domain.admin.Routes;
-import com.aldado.factory.admin.RoutesFactory;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,7 +10,8 @@ public class RoutesFactoryTest {
     public void getRoutes() {
 
         String name = "Southern Suburbs";
-        Routes r = RoutesFactory.getRoutes(name);
+        String id= "route id";
+        Routes r = RoutesFactory.getRoutes(name, id);
         System.out.println(r);
         Assert.assertNotNull(r.getRouteId());
     }

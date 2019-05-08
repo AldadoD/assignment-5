@@ -1,9 +1,10 @@
 package com.aldado.repository;
 
-    public interface ARepository<T, ID> {
-        T create(T t);
-        T update(T t);
-        void delete(ID id);
-        T read(ID id);
+public interface ARepository<K, V> {
+        V create(K k, V v);
+        V update(K k, V v);
+        V delete(K id);
+        V read(K id);
 
 }
+

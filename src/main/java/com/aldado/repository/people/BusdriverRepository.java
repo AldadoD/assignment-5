@@ -3,10 +3,10 @@ package com.aldado.repository.people;
 import com.aldado.domain.people.Busdriver;
 import com.aldado.repository.ARepository;
 
-import java.util.Set;
+import java.util.Collection;
 
-public interface BusdriverRepository extends ARepository<Busdriver, String> {
+public interface BusdriverRepository extends ARepository<String, Busdriver> {
 
-     Set<Busdriver> getAll();
+     Collection<Busdriver> getAll();
 
 }

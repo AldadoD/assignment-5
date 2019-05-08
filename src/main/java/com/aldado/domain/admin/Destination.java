@@ -30,6 +30,13 @@ public class Destination {
            return this;
 
         }
+        public Builder copy(Destination destination) {
+            this.id = destination.id;
+            this.name = destination.name;
+
+
+            return this;
+        }
         public Destination build(){
             return new Destination(this);
         }
@@ -37,6 +44,6 @@ public class Destination {
 
     @Override
     public String toString() {
-        return "Busstop Name{" + "Name='" + name + '\'' + ", id='" + id + '\'' + '}';
+        return "Destination{" + "Dest Name = '" + name + '\'' + ", Dest id = '" + id + '\'' + '}';
     }
 }

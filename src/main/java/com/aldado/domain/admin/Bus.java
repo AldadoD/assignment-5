@@ -59,7 +59,7 @@ public class Bus {
 
     @Override
     public String toString() {
-        return "Bus{" + "Id = '" + id + '\'' + "Service is due = " + serviceDue + '}';
+        return "Bus{" + "Id = '" + id + '\'' + ", Service is due = " + serviceDue + '}';
     }
 
     @Override

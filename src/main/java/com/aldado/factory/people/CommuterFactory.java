@@ -6,7 +6,8 @@ import com.aldado.util.Misc;
 
 public class CommuterFactory {
 
-    public static Commuter getCommuter(boolean checkValidTicket) {
-        return new Commuter.Builder().hasTicket(Misc.checkValidTicket()).build();
+    public static Commuter getCommuter(String commuterId, boolean checkValidTicket) {
+        return new Commuter.Builder().hasTicket(Misc.checkValidTicket()).commuterId(Misc.generateId()).build();
+
     }
 }
