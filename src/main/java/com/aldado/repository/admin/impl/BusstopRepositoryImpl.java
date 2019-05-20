@@ -9,10 +9,10 @@ import java.util.Map;
 
 public class BusstopRepositoryImpl implements BusstopRepository {
 
-    private static BusstopRepository repository = null;
+    private static BusstopRepositoryImpl repository = null;
     private Map<String, Busstop> map = new HashMap<>();
 
-    public static BusstopRepository getRepository(){
+    public static BusstopRepositoryImpl getRepository(){
         if (repository == null) repository = new BusstopRepositoryImpl();
         return repository;
     }

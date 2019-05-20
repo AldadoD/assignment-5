@@ -9,10 +9,10 @@ import java.util.Map;
 
 public class NameRepositoryImpl implements NameRepository {
 
-    private static NameRepository repository = null;
+    private static NameRepositoryImpl repository = null;
     private Map<String, Name> map = new HashMap<>();
 
-    public static NameRepository getRepository(){
+    public static NameRepositoryImpl getRepository(){
         if (repository == null) repository = new NameRepositoryImpl();
         return repository;
     }

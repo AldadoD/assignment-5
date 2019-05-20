@@ -9,10 +9,10 @@ import java.util.Map;
 
 public class RoutesRepositoryImpl implements RoutesRepository {
 
-    private static RoutesRepository repository = null;
+    private static RoutesRepositoryImpl repository = null;
     private Map<String, Routes> map = new HashMap<>();
 
-    public static RoutesRepository getRepository(){
+    public static RoutesRepositoryImpl getRepository(){
         if(repository == null) repository = new RoutesRepositoryImpl();
         return repository;
 

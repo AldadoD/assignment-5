@@ -21,7 +21,7 @@ public class NameRepositoryImplTest {
     @Before
     public void setUp() throws Exception {
         this.repository = NameRepositoryImpl.getRepository();
-        this.name = NameFactory.getName("First Name", "Last Surname");
+        this.name = NameFactory.getName("Patrick", "Adams");
 
         repository.create(this.name.getFirstName(), this.name);
     }
@@ -29,8 +29,8 @@ public class NameRepositoryImplTest {
     @Test
     public void create() {
         Name name = new Name.Builder()
-                .firstName("First Name")
-                .lastName("Last Surname")
+                .firstName("Patrick")
+                .lastName("Adams")
                 .build();
 
         Name created = this.repository.create(name.getFirstName(), name);

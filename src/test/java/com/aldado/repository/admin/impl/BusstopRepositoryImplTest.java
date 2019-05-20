@@ -75,6 +75,6 @@ public class BusstopRepositoryImplTest {
     @Test
     public void d_getAll() {
         Collection<Busstop> all = this.repository.getAll();
-        System.out.println("In getAll, all = " + all);
+        System.out.println("\n" +"In getAll, all = " + all);
     }
 }

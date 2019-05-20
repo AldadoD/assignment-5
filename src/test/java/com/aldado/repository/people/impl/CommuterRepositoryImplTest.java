@@ -65,8 +65,8 @@ public class CommuterRepositoryImplTest {
     public void update() {
         String newId = "Id updated";
         Commuter commuter = new Commuter.Builder().copy(getCommuter()).commuterId(newId).build();
-        System.out.println("\n" + "In update, about to be updated = " + this.commuter.getCommuterId());
-        Commuter updated = this.repository.update(commuter.getCommuterId(), commuter);
+        System.out.println("\n" + "In update, about to be updated = " + commuter);
+        Commuter updated = this.repository.update(this.commuter.getCommuterId(), commuter);
         System.out.println("In update, updated = " + updated);
         Assert.assertSame(newId, updated.getCommuterId());
         d_getAll();

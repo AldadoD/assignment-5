@@ -6,10 +6,10 @@ import com.aldado.repository.people.BusdriverRepository;
 import java.util.*;
 
 public class BusdriverRepositoryImpl implements BusdriverRepository {
-    private static BusdriverRepository repository = null;
+    private static BusdriverRepositoryImpl repository = null;
     private Map<String, Busdriver> map = new HashMap<>();
 
-    public static BusdriverRepository getRepository(){
+    public static BusdriverRepositoryImpl getRepository(){
         if (repository == null) repository = new BusdriverRepositoryImpl();
         return repository;
     }

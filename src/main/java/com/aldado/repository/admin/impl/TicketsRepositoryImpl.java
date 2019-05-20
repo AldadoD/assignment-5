@@ -9,10 +9,10 @@ import java.util.Map;
 
 public class TicketsRepositoryImpl implements TicketsRepository{
 
-    private static TicketsRepository repository = null;
+    private static TicketsRepositoryImpl repository = null;
     private Map<String, Tickets> map = new HashMap<>();
 
-    public static TicketsRepository getRepository(){
+    public static TicketsRepositoryImpl getRepository(){
         if (repository == null) repository = new TicketsRepositoryImpl();
         return repository;
     }

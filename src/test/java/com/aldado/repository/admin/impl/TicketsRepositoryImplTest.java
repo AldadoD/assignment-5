@@ -24,7 +24,7 @@ public class TicketsRepositoryImplTest {
     @Before
     public void setUp() throws Exception {
         this.repository = TicketsRepositoryImpl.getRepository();
-        this.tickets = TicketsFactory.getTicket("One Way Ticket");
+        this.tickets = TicketsFactory.getTicket("One way Ticket");
 
         repository.create(this.tickets.getTicket(), this.tickets);
 

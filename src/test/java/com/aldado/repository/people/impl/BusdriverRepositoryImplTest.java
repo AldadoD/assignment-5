@@ -34,8 +34,8 @@ public class BusdriverRepositoryImplTest {
     public void create() {
         Busdriver busdriver = new Busdriver.Builder()
                 .driverId("")
-                .driverFirstName("")
-                .driverLastName("")
+                .driverFirstName("John")
+                .driverLastName("Jacobs")
                 .build();
 
         Busdriver created = this.repository.create(busdriver.getDriverId(), busdriver);

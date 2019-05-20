@@ -28,11 +28,6 @@ public class Busdriver {
     public String getDriverLastName() {
         return driverLastName;
     }
-//   @Override
-//    public int compareTo(Busdriver o) {
-//        return this.driverId.compareTo(o.driverId);
-//    }
-
 
     public static class Builder {
 

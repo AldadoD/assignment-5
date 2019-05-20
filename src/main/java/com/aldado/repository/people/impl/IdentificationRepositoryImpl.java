@@ -9,10 +9,10 @@ import java.util.Map;
 
 public class IdentificationRepositoryImpl implements IdentificationRepository {
 
-    private static IdentificationRepository repository = null;
+    private static IdentificationRepositoryImpl repository = null;
     private Map<String, Identification> map = new HashMap<>();
 
-    public static IdentificationRepository getRepository(){
+    public static IdentificationRepositoryImpl getRepository(){
         if(repository == null) repository = new IdentificationRepositoryImpl();
         return repository;
 

@@ -7,10 +7,10 @@ import java.util.*;
 
 public class BusRepositoryImpl implements BusRepository {
 
-    private static BusRepository repository = null;
+    private static BusRepositoryImpl repository = null;
     private Map<String, Bus> map = new HashMap();
 
-    public static BusRepository getRepository(){
+    public static BusRepositoryImpl getRepository(){
         if (repository == null) repository = new BusRepositoryImpl();
         return repository;
     }

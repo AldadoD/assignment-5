@@ -23,7 +23,7 @@ public class BusRepositoryImplTest {
     @Before
     public void setUp() throws Exception {
         this.repository = BusRepositoryImpl.getRepository();
-        this.bus = BusFactory.getBus("Id Number", true);
+        this.bus = BusFactory.getBus("id", true);
 
         repository.create(this.bus.getId(), this.bus);
     }

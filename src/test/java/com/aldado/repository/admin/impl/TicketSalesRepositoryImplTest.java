@@ -24,7 +24,7 @@ public class TicketSalesRepositoryImplTest {
     @Before
     public void setUp() throws Exception {
         this.repository = TicketSalesRepositoryImpl.getRepository();
-        this.ticketSales = TicketSalesFactory.getTicketSales("R22.00", "Destination");
+        this.ticketSales = TicketSalesFactory.getTicketSales("R25.00", "Destination");
 
         repository.create(this.ticketSales.getTicketPrice(), this.ticketSales);
 

@@ -9,10 +9,10 @@ import java.util.Map;
 
 public class InspectorRepositoryImpl implements InspectorRepository {
 
-    private static InspectorRepository repository = null;
+    private static InspectorRepositoryImpl repository = null;
     private Map<String, Inspector> map = new HashMap<>();
 
-    public static InspectorRepository getRepository(){
+    public static InspectorRepositoryImpl getRepository(){
         if (repository == null) repository = new InspectorRepositoryImpl();
         return repository;
     }

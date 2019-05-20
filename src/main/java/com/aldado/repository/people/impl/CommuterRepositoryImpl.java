@@ -9,10 +9,10 @@ import java.util.Map;
 
 public class CommuterRepositoryImpl implements CommuterRepository {
 
-    private static CommuterRepository repository = null;
+    private static CommuterRepositoryImpl repository = null;
     private Map<String, Commuter> map = new HashMap<>();
 
-    public static CommuterRepository getRepository(){
+    public static CommuterRepositoryImpl getRepository(){
         if (repository == null) repository = new CommuterRepositoryImpl();
         return repository;
     }
