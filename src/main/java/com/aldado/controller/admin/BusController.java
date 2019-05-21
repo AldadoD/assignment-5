@@ -3,7 +3,6 @@ package com.aldado.controller.admin;
 import com.aldado.domain.admin.Bus;
 import com.aldado.service.admin.BusService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,7 +14,7 @@ import java.util.Collection;
 @RequestMapping("/bus")
 public class BusController {
     @Autowired
-    @Qualifier("BusServeImpl")
+    //@Qualifier("BusServiceImpl")
     private BusService service;
 
     @PostMapping("/create")

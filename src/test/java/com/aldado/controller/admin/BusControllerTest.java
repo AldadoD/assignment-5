@@ -20,7 +20,7 @@ import static junit.framework.TestCase.assertNotNull;
 public class BusControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
-    private String baseURL = "http://localhost:8080/busservice";
+    private String baseURL="http://localhost:8080/bus";
 
 
     @Test
@@ -28,8 +28,7 @@ public class BusControllerTest {
         HttpHeaders headers = new HttpHeaders();
 
         HttpEntity<String> entity = new HttpEntity<String>(null, headers);
-        ResponseEntity<String> response = restTemplate.exchange(baseURL + "/read/all",
-                HttpMethod.GET, entity, String.class);
+        ResponseEntity<String> response = restTemplate.exchange(baseURL + "/read/all", HttpMethod.GET, entity, String.class);
         assertNotNull(response.getBody());
     }
 
