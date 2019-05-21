@@ -1,8 +1,11 @@
 package com.aldado.domain.admin;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 import java.util.Objects;
 import java.util.Set;
 
+@EntityScan
 public class Bus {
 
     private String id;

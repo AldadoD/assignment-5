@@ -2,9 +2,11 @@ package com.aldado.repository.admin.impl;
 
 import com.aldado.domain.admin.Bus;
 import com.aldado.repository.admin.BusRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+@Repository("InMemory")
 public class BusRepositoryImpl implements BusRepository {
 
     private static BusRepositoryImpl repository = null;

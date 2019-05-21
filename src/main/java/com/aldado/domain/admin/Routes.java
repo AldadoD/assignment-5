@@ -1,5 +1,9 @@
 package com.aldado.domain.admin;
 
+
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+@EntityScan
 public class Routes {
 
     private String routeId, routeName;

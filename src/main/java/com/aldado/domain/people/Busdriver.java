@@ -1,7 +1,10 @@
 package com.aldado.domain.people;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 import java.util.Objects;
 
+@EntityScan
 public class Busdriver {
 
     private  String driverId, driverFirstName, driverLastName;

@@ -1,5 +1,9 @@
 package com.aldado.domain.people;
 
+
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+@EntityScan
 public class Identification {
 
     private String id;
