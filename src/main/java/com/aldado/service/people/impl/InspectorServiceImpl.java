@@ -4,12 +4,15 @@ import com.aldado.domain.people.Inspector;
 import com.aldado.repository.people.InspectorRepository;
 import com.aldado.repository.people.impl.InspectorRepositoryImpl;
 import com.aldado.service.people.InspectorService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
+@Service("InspectorServiceImpl")
 public class InspectorServiceImpl implements InspectorService {
 
-
+    @Autowired
     private static InspectorServiceImpl service = null;
     private InspectorRepository repository;
 

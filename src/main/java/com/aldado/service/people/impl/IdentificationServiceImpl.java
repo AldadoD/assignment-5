@@ -4,11 +4,15 @@ import com.aldado.domain.people.Identification;
 import com.aldado.repository.people.IdentificationRepository;
 import com.aldado.repository.people.impl.IdentificationRepositoryImpl;
 import com.aldado.service.people.IdentificationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
+@Service("IdentificationServiceImpl")
 public class IdentificationServiceImpl implements IdentificationService {
 
+    @Autowired
     private static IdentificationServiceImpl service = null;
     private IdentificationRepository repository;
 

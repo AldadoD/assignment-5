@@ -4,12 +4,15 @@ import com.aldado.domain.admin.Destination;
 import com.aldado.repository.admin.DestinationRepository;
 import com.aldado.repository.admin.impl.DestinationRepositoryImpl;
 import com.aldado.service.admin.DestinationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
+@Service("DestinationServiceImpl")
 public class DestinationServiceImpl implements DestinationService {
 
-
+    @Autowired
     private static DestinationServiceImpl service = null;
     private DestinationRepository repository;
 

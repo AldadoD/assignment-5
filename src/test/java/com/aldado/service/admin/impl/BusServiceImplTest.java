@@ -6,10 +6,14 @@ import com.aldado.repository.admin.impl.BusRepositoryImpl;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
+@Service("BusServiceImpl")
 public class BusServiceImplTest {
+    @Autowired
 
     private BusServiceImpl service = null;
     private BusRepositoryImpl repository;
@@ -54,7 +58,7 @@ public class BusServiceImplTest {
         Bus bus = getBus();
         System.out.println("\n" + "In Delete, delete = " + bus);
         this.repository.delete(this.bus.getId());
-        d_getAll();
+        getAll();
         Assert.assertNotNull(bus);
     }
 
@@ -67,7 +71,7 @@ public class BusServiceImplTest {
     }
 
     @Test
-    public void d_getAll() {
+    public void getAll() {
         Collection<Bus> all = this.repository.getAll();
         System.out.println("In getAll, all = " + all);
     }

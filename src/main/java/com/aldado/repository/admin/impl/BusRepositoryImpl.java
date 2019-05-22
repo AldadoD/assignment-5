@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-@Repository("InMemory")
+@Repository
 public class BusRepositoryImpl implements BusRepository {
 
     private static BusRepositoryImpl repository = null;

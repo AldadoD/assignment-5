@@ -4,12 +4,15 @@ import com.aldado.domain.admin.TicketSales;
 import com.aldado.repository.admin.TicketSalesRepository;
 import com.aldado.repository.admin.impl.TicketSalesRepositoryImpl;
 import com.aldado.service.admin.TicketSalesService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
+@Service("TicketSalesServiceImpl")
 public class TicketSalesServiceImpl implements TicketSalesService {
 
-
+    @Autowired
     private static TicketSalesServiceImpl service = null;
     private TicketSalesRepository repository;
 
