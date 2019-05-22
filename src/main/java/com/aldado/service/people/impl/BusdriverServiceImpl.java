@@ -4,10 +4,17 @@ import com.aldado.domain.people.Busdriver;
 import com.aldado.repository.people.BusdriverRepository;
 import com.aldado.repository.people.impl.BusdriverRepositoryImpl;
 import com.aldado.service.people.BusdriverService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
+@Service("BusDriverServeImpl")
 public class BusdriverServiceImpl implements BusdriverService {
+
+    @Autowired
+    @Qualifier("InMemory1")
 
     private static BusdriverServiceImpl service = null;
     private BusdriverRepository repository;

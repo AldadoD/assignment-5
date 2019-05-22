@@ -2,9 +2,11 @@ package com.aldado.repository.people.impl;
 
 import com.aldado.domain.people.Busdriver;
 import com.aldado.repository.people.BusdriverRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+@Repository("InMemory1")
 public class BusdriverRepositoryImpl implements BusdriverRepository {
     private static BusdriverRepositoryImpl repository = null;
     private Map<String, Busdriver> map = new HashMap<>();

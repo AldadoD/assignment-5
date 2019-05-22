@@ -15,12 +15,12 @@ import org.springframework.web.client.HttpClientErrorException;
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertNotNull;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @RunWith(SpringRunner.class)
 public class BusControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
-    private String baseURL = "http://localhost:8080/busservice";
+    private String baseURL = "http://localhost:8080/bus";
 
 
     @Test
