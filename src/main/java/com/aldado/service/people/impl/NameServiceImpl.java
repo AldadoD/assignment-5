@@ -4,7 +4,6 @@ import com.aldado.domain.people.Name;
 import com.aldado.repository.people.NameRepository;
 import com.aldado.repository.people.impl.NameRepositoryImpl;
 import com.aldado.service.people.NameService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -12,7 +11,7 @@ import java.util.Collection;
 @Service("NameServiceImpl")
 public class NameServiceImpl implements NameService {
 
-    @Autowired
+//    @Autowired
     private static NameServiceImpl service = null;
     private NameRepository repository;
 

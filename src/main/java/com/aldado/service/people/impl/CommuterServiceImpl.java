@@ -4,7 +4,6 @@ import com.aldado.domain.people.Commuter;
 import com.aldado.repository.people.CommuterRepository;
 import com.aldado.repository.people.impl.CommuterRepositoryImpl;
 import com.aldado.service.people.CommuterService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -12,7 +11,7 @@ import java.util.Collection;
 @Service("CommuterServiceImpl")
 public class CommuterServiceImpl implements CommuterService {
 
-    @Autowired
+//    @Autowired
 
     private static CommuterServiceImpl service = null;
     private CommuterRepository repository;

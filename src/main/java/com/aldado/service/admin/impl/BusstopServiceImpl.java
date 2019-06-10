@@ -4,7 +4,6 @@ import com.aldado.domain.admin.Busstop;
 import com.aldado.repository.admin.BusstopRepository;
 import com.aldado.repository.admin.impl.BusstopRepositoryImpl;
 import com.aldado.service.admin.BusstopService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -12,7 +11,7 @@ import java.util.Collection;
 @Service("BusstopServiceImpl")
 public class BusstopServiceImpl implements BusstopService {
 
-    @Autowired
+//    @Autowired
     private static BusstopServiceImpl service = null;
     private BusstopRepository repository;
 
