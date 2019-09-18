@@ -8,4 +8,6 @@ import java.util.Collection;
 public interface BusService extends AService<String, Bus> {
 
     Collection<Bus> getAll();
+
+    Bus retrieveByDesc(String busDesc);
 }

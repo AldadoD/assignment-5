@@ -10,6 +10,6 @@ public class IndexController {
     @ResponseBody
 
     public String getHome(){
-        return "Hello World";
+        return "Welcome to the Bus Services App";
     }
 }

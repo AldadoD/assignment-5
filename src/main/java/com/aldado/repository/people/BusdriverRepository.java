@@ -8,5 +8,6 @@ import java.util.Collection;
 public interface BusdriverRepository extends ARepository<String, Busdriver> {
 
      Collection<Busdriver> getAll();
+     Busdriver retrieveByDesc(String busdriverDesc);
 
 }

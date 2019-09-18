@@ -14,5 +14,7 @@ public class BusFactoryTest {
         Bus b = BusFactory.getBus(id, validTicket);
         System.out.println(b);
         Assert.assertNotNull(b.getId());
+
+
     }
 }

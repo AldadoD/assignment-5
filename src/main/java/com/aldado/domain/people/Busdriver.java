@@ -7,7 +7,7 @@ import java.util.Objects;
 @EntityScan
 public class Busdriver {
 
-    private  String driverId, driverFirstName, driverLastName;
+    private  String driverId, driverFirstName, driverLastName, desc;
 
 
     private Busdriver(){
@@ -17,11 +17,15 @@ public class Busdriver {
         this.driverId = builder.driverId;
         this.driverFirstName = builder.driverFirstName;
         this.driverLastName = builder.driverLastName;
+        this.desc = builder.desc;
 
     }
 
     public String getDriverId() {
         return driverId;
+    }
+    public String getDesc() {
+        return desc;
     }
 
     public String getDriverFirstName() {
@@ -34,7 +38,8 @@ public class Busdriver {
 
     public static class Builder {
 
-        private String driverId, driverFirstName, driverLastName;
+        private String driverId, driverFirstName, driverLastName, desc;
+
 
          public Busdriver.Builder driverId( String driverId) {
             this.driverId = driverId;
@@ -48,6 +53,10 @@ public class Busdriver {
 
         public Builder driverLastName( String driverLastName) {
             this.driverLastName = driverLastName;
+            return this;
+        }
+        public Builder desc(String desc) {
+            this.desc = desc;
             return this;
         }
 

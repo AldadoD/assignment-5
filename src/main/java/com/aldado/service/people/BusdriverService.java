@@ -8,5 +8,6 @@ import java.util.Collection;
 public interface BusdriverService extends AService<String, Busdriver> {
 
         Collection<Busdriver> getAll();
+        Busdriver retrieveByDesc(String busDesc);
 
         }

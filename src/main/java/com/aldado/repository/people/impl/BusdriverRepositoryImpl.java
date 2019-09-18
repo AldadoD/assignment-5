@@ -9,6 +9,7 @@ import java.util.*;
 @Repository("InMemory1")
 public class BusdriverRepositoryImpl implements BusdriverRepository {
     private static BusdriverRepositoryImpl repository = null;
+    private Set<Busdriver> busdriverDB;
     private Map<String, Busdriver> map = new HashMap<>();
 
     public static BusdriverRepositoryImpl getRepository(){
@@ -47,5 +48,9 @@ public class BusdriverRepositoryImpl implements BusdriverRepository {
     @Override
     public Busdriver read(String id) {
         return map.get(id);
+    }
+    @Override
+    public Busdriver retrieveByDesc(String busdriverDesc) {
+        return this.busdriverDB.stream().filter(busdriver -> busdriver.getDesc().equalsIgnoreCase(busdriverDesc)).findAny().orElse(null);
     }
 }

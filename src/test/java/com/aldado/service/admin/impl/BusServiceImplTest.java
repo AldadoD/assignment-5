@@ -2,7 +2,6 @@ package com.aldado.service.admin.impl;
 
 import com.aldado.domain.admin.Bus;
 import com.aldado.factory.admin.BusFactory;
-import com.aldado.repository.admin.impl.BusRepositoryImpl;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,19 +15,19 @@ public class BusServiceImplTest {
     @Autowired
 
     private BusServiceImpl service = null;
-    private BusRepositoryImpl repository;
+//    private BusRepositoryImpl repository;
     private Bus bus;
 
     private Bus getBus(){
-        return  this.repository.getAll().iterator().next();
+        return  this.service.getAll().iterator().next();
     }
 
     @Before
     public void setUp() throws Exception {
-        this.repository = BusRepositoryImpl.getRepository();
-        this.bus = BusFactory.getBus("", true);
+        this.service = BusServiceImpl.getService();
+        this.bus = BusFactory.getBus("id", true);
 
-        repository.create(this.bus.getId(), this.bus);
+        service.create(this.bus.getId(), this.bus);
     }
 
     @Test
@@ -38,7 +37,7 @@ public class BusServiceImplTest {
                 .serviceDue(true)
                 .build();
 
-        Bus created = this.repository.create(bus.getId(), bus);
+        Bus created = this.service.create(bus.getId(), bus);
         System.out.println("\n" + "In create, created = " + created);
         Assert.assertNotNull(created);
         Assert.assertSame(created, bus);
@@ -57,7 +56,7 @@ public class BusServiceImplTest {
     public void delete() {
         Bus bus = getBus();
         System.out.println("\n" + "In Delete, delete = " + bus);
-        this.repository.delete(this.bus.getId());
+        this.service.delete(this.bus.getId());
         getAll();
         Assert.assertNotNull(bus);
     }
@@ -65,14 +64,14 @@ public class BusServiceImplTest {
     @Test
     public void read() {
         Bus bus = getBus();
-        Bus read = this.repository.read(bus.getId());
+        Bus read = this.service.read(bus.getId());
         System.out.println("\n" + "In Read, read = "+ bus.getId());
         Assert.assertSame(bus, read);
     }
 
     @Test
     public void getAll() {
-        Collection<Bus> all = this.repository.getAll();
+        Collection<Bus> all = this.service.getAll();
         System.out.println("In getAll, all = " + all);
     }
 }

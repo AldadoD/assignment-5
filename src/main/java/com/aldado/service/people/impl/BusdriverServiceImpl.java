@@ -47,6 +47,11 @@ public class BusdriverServiceImpl implements BusdriverService {
     }
 
     @Override
+    public Busdriver retrieveByDesc(String busdriverDesc) {
+        return this.repository.retrieveByDesc(busdriverDesc);
+    }
+
+    @Override
     public Collection<Busdriver> getAll() {
         return this.repository.getAll();
     }

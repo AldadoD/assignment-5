@@ -2,7 +2,8 @@ package com.aldado.service.admin.impl;
 
 import com.aldado.domain.admin.Bus;
 import com.aldado.repository.admin.BusRepository;
-import com.aldado.repository.admin.impl.BusRepositoryImpl;
+//import com.aldado.repository.admin.impl.BusRepositoryImpl;
+import com.aldado.repository.admin.impl.*;
 import com.aldado.service.admin.BusService;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ public class BusServiceImpl implements BusService {
     private BusRepository repository;
 
     private BusServiceImpl(){
-        this.repository = BusRepositoryImpl.getRepository();
+        this.repository = BusRepositoryImpl.getBusRepository();
     }
     public static BusServiceImpl getService(){
         if (service == null) service = new BusServiceImpl();
@@ -41,6 +42,11 @@ public class BusServiceImpl implements BusService {
     @Override
     public Bus read(String id) {
         return this.repository.read(id);
+    }
+
+    @Override
+    public Bus retrieveByDesc(String busDesc) {
+        return this.repository.retrieveByDesc(busDesc);
     }
 
     @Override

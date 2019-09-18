@@ -7,5 +7,9 @@ import java.util.Collection;
 
 public interface BusRepository extends ARepository<String, Bus> {
 
+
+
         Collection<Bus> getAll();
+
+        Bus retrieveByDesc(String busDesc);
 }
